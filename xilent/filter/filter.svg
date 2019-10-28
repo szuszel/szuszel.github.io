@@ -1,0 +1,22 @@
+<svg style="position: absolute; top: -999999px" xmlns="http://www.w3.org/2000/svg">
+	<filter id="filter" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox"
+		primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feGaussianBlur stdDeviation="3 0" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none"
+			result="blur6" />
+		<feMerge x="0%" y="0%" width="100%" height="100%" result="merge5">
+			<feMergeNode in="blur6" />
+			<feMergeNode in="SourceGraphic" />
+		</feMerge>
+		<feBlend mode="lighten" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" in2="blur6"
+			result="blend" />
+	</filter>
+	<filter id="filter2" x="-20%" y="-20%" width="140%" height="140%" filterUnits="objectBoundingBox"
+		primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feGaussianBlur stdDeviation="20 0" x="0%" y="0%" width="100%" height="100%" in="SourceGraphic" edgeMode="none"
+			result="blur6" />
+		<feMerge x="0%" y="0%" width="100%" height="100%" result="merge5">
+			<feMergeNode in="blur6" />
+			<feMergeNode in="SourceGraphic" />
+		</feMerge>
+	</filter>
+</svg>

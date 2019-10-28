@@ -1,0 +1,683 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+$BLACK: #1D1D1B;
+$RED: #FF2C01;
+$RED2: rgb(170, 43, 17);
+$FONT: 'Source Sans Pro',
+monospace;
+
+a {
+    color: inherit;
+}
+
+// html {
+//   font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+// }
+
+scrollbarbutton {
+    -moz-appearance: none !important;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: $BLACK;
+    font-family: $FONT;
+    color: $RED;
+}
+
+img {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%) translateY(50%);
+
+    transition: bottom 1s .3s ease;
+    z-index: 9999;
+
+    &.active {
+        bottom: 5em;
+        transition: bottom 1s ease;
+    }
+}
+
+nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2.5em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 1em;
+
+    >span {
+        width: .5em;
+        height: .5em;
+        background-color: $RED;
+        margin: .25em 0;
+        border-radius: 100%;
+    }
+}
+
+aside {
+    display: block;
+    position: fixed;
+    right: 5em;
+    top: 10em;
+    bottom: 10em;
+    background-color: $RED;
+    z-index: 9999;
+    color: $BLACK;
+    overflow-y: auto;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s .6s ease;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $RED;
+        border: 4px solid $RED;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $BLACK;
+    }
+
+    ul {
+        margin: 0 3em;
+        font-weight: bolder;
+        list-style: none;
+        font-size: 1.25em;
+        padding-inline-start: 0px;
+        overflow: hidden;
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        li {
+            transform: translateX(-50px);
+            opacity: 0;
+            transition:
+                transform .2s ease,
+                opacity .2s ease;
+        }
+
+        @for $k from 1 through 11 {
+            li:nth-child(#{$k}) {
+                transition-delay: 0.55s - $k * 0.05s;
+            }
+        }
+
+        .big {
+            font-size: 2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+
+            &:hover {
+                background-color: $BLACK;
+                color: $RED;
+            }
+        }
+    }
+
+    &.active {
+        transform: scaleX(1);
+        transition: transform .3s ease;
+
+        ul li {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        @for $k from 1 through 11 {
+            li:nth-child(#{$k}) {
+                transition-delay: $k * 0.05s + 0.3s;
+            }
+        }
+    }
+}
+
+main {
+    display: block;
+    position: absolute;
+    left: 5em;
+    top: 5em;
+    bottom: 5em;
+    right: 5em;
+    border: 2px solid $RED;
+    overflow-y: AUTO;
+    overflow-x: hidden;
+    scrollbar-color: $RED $BLACK;
+    scrollbar-width: thin;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $RED;
+        border: 4px solid #1D1D1B;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: $RED;
+    }
+
+    &::after {
+        content: "";
+        position: fixed;
+        left: calc(5em + 2px);
+        top: calc(5em + 2px);
+        bottom: calc(5em + 2px);
+        right: calc(5em + 2px);
+        background: $BLACK;
+        z-index: 999;
+        transition: opacity .3s ease;
+    }
+
+    &.active::after {
+        opacity: 0;
+        transition: opacity .3s 1s ease;
+        pointer-events: none;
+    }
+}
+
+header {
+    // background-color: $RED;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &.home {
+        min-height: 100%;
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/noisiabg.jpg");
+    }
+
+    &.bio {
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/Noisia.jpg");
+        background-size: 100%;
+    }
+
+    &.radio {
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/satellite.jpg");
+        background-size: cover;
+    }
+
+    &.download {
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/motherboard.jpg");
+        background-size: cover;
+    }
+
+    &.discography {
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/discography.jpg");
+        background-size: cover;
+    }
+
+    &.live {
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/dj.jpg");
+        background-size: cover;
+    }
+
+    &.contact {
+        background-image:
+            linear-gradient(to bottom, transparent, $BLACK),
+            url("../img/phone.jpg");
+            background-size: cover;
+    }
+
+    video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        object-fit: cover;
+        mix-blend-mode: luminosity;
+        filter: saturate(0) brightness(.2);
+    }
+}
+
+h1,
+h3,
+h2,
+h4 {
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    z-index: 2;
+    position: relative;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+p {
+    max-width: 1000px;
+    margin: 2em auto;
+    font-size: 1.5em;
+    padding: 0 1em;
+}
+
+h1 {
+    font-size: 6em;
+}
+
+h2 {
+    font-size: 5em;
+}
+
+h3 {
+    font-size: 2.25em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+form {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.5em;
+
+    input {
+        font-size: 1em;
+        margin: 0;
+        color: inherit;
+        border: 1px solid $RED;
+        font: inherit;
+        font-weight: 600;
+        padding: 4px 16px;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $RED;
+            opacity: .5;
+        }
+
+        &[type="text"] {
+            background: none;
+            box-sizing: inherit;
+            min-width: 35%;
+        }
+
+        &[type="submit"] {
+            background: $RED;
+            color: $BLACK;
+            cursor: pointer;
+            box-sizing: inherit;
+
+            &:hover {
+                background: $BLACK;
+                color: $RED;
+            }
+        }
+    }
+}
+
+.table {
+    .row {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        text-align: left;
+        flex-wrap: wrap;
+        font-size: 1.25em;
+
+        div {
+            padding: 0 8px;
+        }
+
+        .date,
+        .ticket {
+            display: block;
+            flex: 1;
+            white-space: nowrap;
+        }
+
+        .name {
+            display: block;
+            flex: 5;
+            white-space: nowrap;
+        }
+
+        .place {
+            display: block;
+            flex: 3;
+            white-space: nowrap;
+        }
+    }
+}
+
+hr {
+    border-color: $RED;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr 1fr;
+    font-size: 1.25em;
+
+    div {
+        padding: 12px 8px;
+        background: $BLACK;
+    }
+
+    .ticket {
+        text-align: right;
+    }
+
+    a {
+        text-decoration: none;
+        background-color: $RED;
+        color: $BLACK;
+        padding: 4px 8px;
+        border: 1px solid $RED;
+
+        &:hover {
+            color: $RED;
+            background-color: $BLACK;
+        }
+    }
+}
+
+.zero {
+    font-size: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        min-height: 50% !important;
+    }
+
+    aside li {
+        font-size: 2em;
+
+        &.big {
+            font-size: 3em;
+        }
+    }
+
+    .table {
+        grid-template-columns: 1fr 2fr;
+
+        .place {
+            text-align: right;
+        }
+
+        .name {
+            grid-column: 1/4;
+            grid-row: 2;
+            text-align: center;
+        }
+
+        .ticket {
+            text-align: center;
+            grid-column: 1/4;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: $RED;
+            color: $BLACK;
+            padding: 4px 8px;
+            border: 1px solid $RED;
+            display: block;
+            width: calc(100% - 16px);
+            font-size: 2em;
+
+            &:hover {
+                color: $RED;
+                background-color: $BLACK;
+            }
+        }
+
+    }
+
+    nav {
+        right: 1.5em;
+
+        >span {
+            margin: .5em .5em;
+        }
+    }
+}
+
+.button {
+    text-decoration: none;
+    background-color: $RED;
+    color: $BLACK;
+    padding: 4px 8px;
+    border: 1px solid $RED;
+
+    &:hover {
+        color: $RED;
+        background-color: $BLACK;
+    }
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: inherit;
+    max-width: 1000px;
+    margin: auto;
+
+    a {
+        margin: .5em 1em;
+        flex: 1;
+        text-align: center;
+        font-size: 1.5em;
+        white-space: nowrap;
+    }
+}
+
+.flex-between2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: inherit;
+
+    a {
+        margin: .5em 1em;
+        flex: 1;
+        text-align: center;
+        font-size: 1.5em;
+        text-decoration: none;
+        background-color: $RED;
+        color: $BLACK;
+        padding: 4px 8px;
+        border: 1px solid $RED;
+
+        &:hover {
+            background: $BLACK;
+            color: $RED;
+        }
+    }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: inherit;
+    margin-top: 1em;
+
+    a {
+        margin: 4px;
+        text-align: center;
+        font-size: 1.5em;
+        text-decoration: none;
+        background-color: $RED;
+        color: $BLACK;
+        padding: 4px 8px;
+        border: 1px solid $RED;
+
+        &:hover {
+            background: $BLACK;
+            color: $RED;
+        }
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 8px;
+
+    &.big {
+        grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+
+        >a::before,
+        .image::before {
+            padding-top: 56.25%;
+        }
+    }
+
+    >a,
+    .image {
+        display: block;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            padding-top: 100%;
+            background-color: #1D1D1B;
+            opacity: 0;
+            transition: opacity .3s ease;
+            transform: translateZ(0);
+        }
+
+        &:hover {
+            &::before {
+                opacity: .8;
+            }
+
+            .content {
+                opacity: 1;
+            }
+        }
+    }
+
+    .content {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: $RED;
+        opacity: 0;
+        transform: translateZ(0);
+
+        transition: opacity .3s ease;
+        z-index: 99;
+    }
+}
+
+
+.sub {
+    color: $RED2;
+}
+
+.video-container {
+    position: relative;
+    padding-top: 30px;
+    max-width: 1000px;
+    margin: auto;
+
+    &::after {
+        content: "";
+        display: block;
+        padding-bottom: 56.25%;
+    }
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.left {
+    text-align: left;
+    max-width: 1000px;
+    margin: auto;
+    font-size: 3.5em;
+    padding: 0 0.3em;
+}
+
+.nojsmenu {
+    background-color: $RED;
+    color: black;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    ul {
+        margin: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: center;
+
+        li  {
+            display: inline-block;
+            margin: 1rem 2rem;
+
+            a {
+                text-decoration: none;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
