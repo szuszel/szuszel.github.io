@@ -560,7 +560,7 @@ textarea[type="submit"]:hover {
   color: #FFF;
 }
 
-.form,
+form,
 .contact {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -585,11 +585,11 @@ textarea[type="submit"]:hover {
   display: inline-block;
 }
 
-.form p {
+form p {
   padding-bottom: .5rem;
 }
 
-.form p:nth-child(1) {
+form p:nth-child(1) {
   padding-top: 0;
 }
 
@@ -799,89 +799,75 @@ noscript .info {
   }
 }
 
-header .pc #dominik_1 path {
-  -webkit-transition: -webkit-transform 1s ease-out;
-  transition: -webkit-transform 1s ease-out;
-  transition: transform 1s ease-out;
-  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+header .pc .dominik_1 path {
   -webkit-transform: translateY(35px) translateZ(0);
           transform: translateY(35px) translateZ(0);
 }
 
-header .pc #dominik_2 path {
-  -webkit-transition: -webkit-transform 1s .8s ease-out;
-  transition: -webkit-transform 1s .8s ease-out;
-  transition: transform 1s .8s ease-out;
-  transition: transform 1s .8s ease-out, -webkit-transform 1s .8s ease-out;
+header .pc .dominik_2 path {
   -webkit-transform: translateY(23px) translateZ(0);
           transform: translateY(23px) translateZ(0);
 }
 
-header .pc #piotrowski_1 path {
-  -webkit-transition: -webkit-transform 1s ease-out;
-  transition: -webkit-transform 1s ease-out;
-  transition: transform 1s ease-out;
-  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+header .pc .piotrowski_1 path {
   -webkit-transform: translateY(-35px) translateZ(0);
           transform: translateY(-35px) translateZ(0);
 }
 
-header .pc #piotrowski_2 path {
-  -webkit-transition: -webkit-transform 1s .8s ease-out;
-  transition: -webkit-transform 1s .8s ease-out;
-  transition: transform 1s .8s ease-out;
-  transition: transform 1s .8s ease-out, -webkit-transform 1s .8s ease-out;
+header .pc .piotrowski_2 path {
   -webkit-transform: translateY(-23px) translateZ(0);
           transform: translateY(-23px) translateZ(0);
 }
 
-header .phone #dominik_1 path {
-  -webkit-transition: -webkit-transform 1s ease-out;
-  transition: -webkit-transform 1s ease-out;
-  transition: transform 1s ease-out;
-  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+header .phone .dominik_1 path {
   -webkit-transform: translateX(-35px) translateZ(0);
           transform: translateX(-35px) translateZ(0);
 }
 
-header .phone #dominik_2 path {
-  -webkit-transition: -webkit-transform 1s 1.2s ease-out;
-  transition: -webkit-transform 1s 1.2s ease-out;
-  transition: transform 1s 1.2s ease-out;
-  transition: transform 1s 1.2s ease-out, -webkit-transform 1s 1.2s ease-out;
+header .phone .dominik_2 path {
   -webkit-transform: translateX(-23px) translateZ(0);
           transform: translateX(-23px) translateZ(0);
 }
 
-header .phone #piotrowski_1 path {
-  -webkit-transition: -webkit-transform 1s ease-out;
-  transition: -webkit-transform 1s ease-out;
-  transition: transform 1s ease-out;
-  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+header .phone .piotrowski_1 path {
   -webkit-transform: translateX(35px) translateZ(0);
           transform: translateX(35px) translateZ(0);
 }
 
-header .phone #piotrowski_2 path {
-  -webkit-transition: -webkit-transform 1s 1.2s ease-out;
-  transition: -webkit-transform 1s 1.2s ease-out;
-  transition: transform 1s 1.2s ease-out;
-  transition: transform 1s 1.2s ease-out, -webkit-transform 1s 1.2s ease-out;
+header .phone .piotrowski_2 path {
   -webkit-transform: translateX(23px) translateZ(0);
           transform: translateX(23px) translateZ(0);
 }
 
-header.active .pc #dominik_1 path,
-header.active .pc #dominik_2 path,
-header.active .pc #piotrowski_1 path,
-header.active .pc #piotrowski_2 path,
-header.active .phone #dominik_1 path,
-header.active .phone #dominik_2 path,
-header.active .phone #piotrowski_1 path,
-header.active .phone #piotrowski_2 path {
+header.active .pc .dominik_1 path,
+header.active .pc .dominik_2 path,
+header.active .pc .piotrowski_1 path,
+header.active .pc .piotrowski_2 path,
+header.active .phone .dominik_1 path,
+header.active .phone .dominik_2 path,
+header.active .phone .piotrowski_1 path,
+header.active .phone .piotrowski_2 path {
   -webkit-transform: translateY(0) translateX(0) translateZ(0);
           transform: translateY(0) translateX(0) translateZ(0);
   will-change: transform;
+}
+
+header.active .pc .dominik_1 path, header.active .pc .piotrowski_1 path,
+header.active .phone .dominik_1 path,
+header.active .phone .piotrowski_1 path {
+  -webkit-transition: -webkit-transform 1s ease-out;
+  transition: -webkit-transform 1s ease-out;
+  transition: transform 1s ease-out;
+  transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+}
+
+header.active .pc .dominik_2 path, header.active .pc .piotrowski_2 path,
+header.active .phone .dominik_2 path,
+header.active .phone .piotrowski_2 path {
+  -webkit-transition: -webkit-transform 1s .8s ease-out;
+  transition: -webkit-transform 1s .8s ease-out;
+  transition: transform 1s .8s ease-out;
+  transition: transform 1s .8s ease-out, -webkit-transform 1s .8s ease-out;
 }
 
 .smallTitle {

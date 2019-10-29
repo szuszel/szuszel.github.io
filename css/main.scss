@@ -398,45 +398,37 @@ noscript .info {
 
 header {
     .pc {
-        #dominik_1 path {
-            transition: transform 1s ease-out;
+        .dominik_1 path {
             transform: translateY(35px) translateZ(0);
         }
 
-        #dominik_2 path {
-            transition: transform 1s .8s ease-out;
+        .dominik_2 path {
             transform: translateY(23px) translateZ(0);
         }
 
-        #piotrowski_1 path {
-            transition: transform 1s ease-out;
+        .piotrowski_1 path {
             transform: translateY(-35px) translateZ(0);
         }
 
-        #piotrowski_2 path {
-            transition: transform 1s .8s ease-out;
+        .piotrowski_2 path {
             transform: translateY(-23px) translateZ(0);
         }
     }
 
     .phone {
-        #dominik_1 path {
-            transition: transform 1s ease-out;
+        .dominik_1 path {
             transform: translateX(-35px) translateZ(0);
         }
 
-        #dominik_2 path {
-            transition: transform 1s 1.2s ease-out;
+        .dominik_2 path {
             transform: translateX(-23px) translateZ(0);
         }
 
-        #piotrowski_1 path {
-            transition: transform 1s ease-out;
+        .piotrowski_1 path {
             transform: translateX(35px) translateZ(0);
         }
 
-        #piotrowski_2 path {
-            transition: transform 1s 1.2s ease-out;
+        .piotrowski_2 path {
             transform: translateX(23px) translateZ(0);
         }
     }
@@ -447,15 +439,26 @@ header.active {
     .pc,
     .phone {
 
-        #dominik_1,
-        #dominik_2,
-        #piotrowski_1,
-        #piotrowski_2 {
+        .dominik_1,
+        .dominik_2,
+        .piotrowski_1,
+        .piotrowski_2 {
             path {
                 transform: translateY(0) translateX(0) translateZ(0);
                 will-change: transform;
             }
+        }
 
+        .dominik_1, .piotrowski_1 {
+            path {
+                transition: transform 1s ease-out;
+            }
+        }
+
+        .dominik_2, .piotrowski_2 {
+            path {
+                transition: transform 1s .8s ease-out;
+            }
         }
     }
 }
