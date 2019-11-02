@@ -589,10 +589,6 @@ form p {
   padding-bottom: .5rem;
 }
 
-form p:nth-child(1) {
-  padding-top: 0;
-}
-
 .right {
   text-align: right;
 }
@@ -1001,5 +997,9 @@ h2 {
 .orange ::selection {
   background-color: #FFF;
   color: #F60;
+}
+
+label:nth-child(1) p {
+  padding-top: 0;
 }
 /*# sourceMappingURL=main.css.map */

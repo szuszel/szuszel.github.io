@@ -198,10 +198,6 @@ form,
 
 form p {
     padding-bottom: .5rem;
-
-    &:nth-child(1) {
-        padding-top: 0;
-    }
 }
 
 .right {
@@ -566,4 +562,8 @@ h2 {
 .orange ::selection {
     background-color: $WHITE;
     color: $ORAGNE;
+}
+
+label:nth-child(1) p {
+    padding-top: 0;
 }
