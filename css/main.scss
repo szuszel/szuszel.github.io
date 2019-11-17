@@ -346,6 +346,27 @@ h4 {
     }
 }
 
+@media (max-width: 800px) {
+    .grid-row {
+        grid-template-columns: 1fr;
+        
+
+    > div {
+        &:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        &:nth-child(2) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+    }
+    }
+}
+
+
+
 
 p {
     padding: 1em 0;
@@ -502,6 +523,13 @@ h2 {
     .flex-between {
         flex-direction: column;
     }
+}
+
+@media (max-width: 800px) {
+    .flex-between {
+        flex-direction: column;
+    }
+
 }
 
 .gallery {
