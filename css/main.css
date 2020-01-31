@@ -750,7 +750,7 @@ h4 {
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
   }
-  .grid-row:hover .image::after {
+  .grid-row:hover .image::after, .grid-row:focus .image::after {
     opacity: 0;
   }
 }

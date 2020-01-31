@@ -356,7 +356,7 @@ h4 {
         transition: opacity .3s ease;
     }
 
-    .grid-row:hover .image::after {
+    .grid-row:hover .image::after, .grid-row:focus .image::after {
         opacity: 0;
     }
 }
@@ -593,6 +593,10 @@ h2 {
         &:hover::after {
             opacity: 0;
         }
+    }
+
+    .image:focus-within::after {
+        opacity: 0;
     }
 }
 
