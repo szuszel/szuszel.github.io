@@ -1,0 +1,56 @@
+@import 'colors';
+
+nav {
+    position: sticky;
+    top: 3rem;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    height: calc(100vh - 8rem);
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: .5rem;
+        background-color: transparent;
+        padding: 1rem 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: lighten($NAVBACKGROUND, 10%);
+        border: 3px solid $NAVBACKGROUND;
+
+        &:hover {
+            border-width: 0;
+        }
+    }
+
+    .smool {
+        font-size: 1rem;
+
+        a span {
+            overflow: hidden hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1; /* number of lines to show */
+            -webkit-box-orient: vertical;
+            line-height: 1.5;
+        }
+    }
+
+    background-color: $NAVBACKGROUND;
+
+    a {
+        display: block;
+        box-sizing: border-box;
+        padding: .75rem 1rem;
+        border: 3px solid transparent;
+
+        &:hover {
+            border: 3px solid lighten($NAVBACKGROUND, 20%);
+            background-color: lighten($NAVBACKGROUND, 10%);
+        }
+    }
+}
+
+.home_link {
+    padding: .25rem 0;
+}
