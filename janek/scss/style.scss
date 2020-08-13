@@ -27,11 +27,24 @@ html, body {
 }
 
 main {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    
+    margin: 3rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  main {
     display: grid;
     grid-template-columns: minmax(800px, 3fr) minmax(auto, 1fr);
 
     gap: 3rem;
-    margin: 3rem;
+}
+
 }
 
 article {
