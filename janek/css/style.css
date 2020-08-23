@@ -52,7 +52,7 @@ table {
   border-spacing: 0;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1280px) {
   aside {
     display: none;
   }
@@ -108,14 +108,19 @@ aside nav a {
 
 aside nav a:hover {
   border: 3px solid #5d5d5d;
-  background-color: #444444;
+  background-color: #373737;
+}
+
+aside nav .nolink {
+  padding: .75rem 1rem;
+  display: block;
 }
 
 .home_link {
   padding: .25rem 0;
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1280px) {
   .bottom_nav {
     display: none;
   }
@@ -183,7 +188,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -205,6 +210,164 @@ blockquote {
   color: #141414;
   word-wrap: break-word;
   padding: 1.5rem;
+}
+
+ul, ol {
+  margin: 2rem 0;
+  font-size: 1.5rem;
+}
+
+ul a, ol a {
+  text-decoration: underline;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-left: 2rem;
+  margin-top: 1rem;
+  list-style-position: inside;
+}
+
+dfn {
+  font-weight: bold;
+}
+
+.definition {
+  font-size: 1.5rem;
+  margin: 1rem 2rem;
+}
+
+.light {
+  font-weight: normal;
+}
+
+.button {
+  display: inline-block;
+  background-color: #DFDFDF;
+  padding: .5rem .75rem;
+  color: #141414;
+  font-weight: bold;
+  font-size: 1.25rem;
+  border: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.button:hover {
+  background-color: transparent;
+  color: #DFDFDF;
+  border: 3px solid #DFDFDF;
+}
+
+.article_link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  margin: 1rem 0;
+  padding: .75rem 1rem;
+  border: 3px solid transparent;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.article_link .line {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: -webkit-box-flex .3s ease;
+  transition: -webkit-box-flex .3s ease;
+  transition: flex .3s ease;
+  transition: flex .3s ease, -webkit-box-flex .3s ease, -ms-flex .3s ease;
+}
+
+.article_link .text {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  margin-left: 2rem;
+}
+
+.article_link .text h2 {
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+}
+
+.article_link p {
+  display: block;
+  overflow: hidden hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+  line-height: 1.5;
+}
+
+.article_link:hover {
+  border: 3px solid #5d5d5d;
+  background-color: #373737;
+}
+
+header {
+  min-height: 50vh;
+  padding: .75rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  background: #1e3c72;
+  background: -webkit-gradient(linear, left top, left bottom, from(#2a5298), to(#1e3c72));
+  background: linear-gradient(2700deg, #2a5298, #1e3c72);
+  background-size: cover;
+  background-position: center;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.5)));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+  z-index: 1;
+}
+
+header h1 {
+  margin-block: 3rem 0;
+}
+
+header * {
+  z-index: 2;
+}
+
+header > div {
+  margin: 1rem 0 .5rem 0;
+}
+
+header .button {
+  color: #1e3c72;
 }
 
 html {
@@ -232,6 +395,7 @@ html, body {
 
 main {
   margin: 1rem;
+  min-height: calc(100vh - 6rem);
 }
 
 @media screen and (min-width: 1000px) {
@@ -240,7 +404,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1280px) {
   main {
     display: -ms-grid;
     display: grid;

@@ -2,6 +2,8 @@
 @import 'nav';
 @import 'colors';
 @import 'utility';
+@import 'article_list';
+@import 'index';
 
 $FONT: 'Montserrat';
 
@@ -28,6 +30,7 @@ html, body {
 
 main {
   margin: 1rem;
+  min-height: calc(100vh - 6rem);
 }
 
 @media screen and (min-width: 1000px) {
@@ -37,7 +40,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 1280px) {
   main {
     display: grid;
     grid-template-columns: minmax(800px, 3fr) minmax(auto, 1fr);

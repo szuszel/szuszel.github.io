@@ -1,3 +1,5 @@
+@import 'colors';
+
 h1 {
     font-size: 3rem;
     margin: 2rem 0;
@@ -11,7 +13,7 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
 }
 
@@ -33,4 +35,59 @@ blockquote {
     color: $BACKGROUND;
     word-wrap: break-word;
     padding: 1.5rem;
+}
+
+ul, ol {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+li {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    list-style-position: inside;
+}
+
+dfn {
+    font-weight: bold;
+}
+
+.definition {
+    font-size: 1.5rem;
+    margin: 1rem 2rem;
+}
+
+
+.light {
+    font-weight: normal;
+}
+
+
+.button {
+    display: inline-block;
+    background-color: $TEXTCOLOR;
+    padding: .5rem .75rem;
+    color: $BACKGROUND;
+    font-weight: bold;
+    font-size: 1.25rem;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+
+    &:hover {
+        background-color: transparent;
+        color: $TEXTCOLOR;
+        border: 3px solid $TEXTCOLOR;
+    }
 }
