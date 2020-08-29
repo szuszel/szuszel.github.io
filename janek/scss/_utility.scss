@@ -52,6 +52,10 @@ ul {
 
 ol {
     list-style-type: decimal;
+
+    ol {
+        list-style-type: lower-alpha;
+    }
 }
 
 li {
@@ -90,4 +94,13 @@ dfn {
         color: $TEXTCOLOR;
         border: 3px solid $TEXTCOLOR;
     }
+}
+
+.no_top_margin {
+    margin-top: 0;
+}
+
+.h3 {
+    margin-block: 1rem;
+    font-weight: bold;
 }
